@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  	<div class="container">
+  		<div class="container">
+  			
+  			<form method="post">{% csrf_token %}
+
+  				{% for message in messages %}
+  				<div class="materialert success">
+			    	<div class="material-icons"></div>
+			    	{{ message }}
+				</div>
+  						
+  				{% endfor %}
+  				
+  				{{ form.as_p }}
+  				{% if form.label %}
+  					{{ form.label }}
+  				{% endif %}
+  			
+
+  			<button class="btn" type="submit">Register</button>
+
+  			</form>
+  		</div>
+
+	</div>
+{% endblock %}
+
+ 

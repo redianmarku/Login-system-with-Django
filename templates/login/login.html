@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<div class="container">
+		<h1 class="center">Login Now</h1>
+
+		<div class="container">
+			<form method="post">
+				{% csrf_token %}
+
+				{% for message in messages %}
+  				<div class="materialert {{ message.tags }}">
+			    	<div class="material-icons"></div>
+			    	{{ message }}
+				</div>
+  						
+  				{% endfor %}
+
+				{{ form.as_p }}
+
+				<button class="btn center">Login</button>
+			</form>
+		</div>
+	</div>
+
+{% endblock %}
